@@ -1,6 +1,6 @@
 Name:		texlive-bxjalipsum
 Version:	43369
-Release:	1
+Release:	2
 Summary:	Dummy text in Japanese
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bxjalipsum
