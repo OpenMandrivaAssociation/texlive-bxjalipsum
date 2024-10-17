@@ -3,7 +3,7 @@ Version:	67620
 Release:	1
 Summary:	Dummy text in Japanese
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bxjalipsum
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bxjalipsum
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.doc.r%{version}.tar.xz
