@@ -1,39 +1,25 @@
-Name:		texlive-bxjalipsum
-Version:	67620
-Release:	1
+%global tl_name bxjalipsum
+%global tl_revision 79277
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0b
+Release:	%{tl_revision}.1
 Summary:	Dummy text in Japanese
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bxjalipsum
+URL:		https://www.ctan.org/tex-archive/language/japanese/BX/bxjalipsum
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bxjalipsum.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package enables users to print some Japanese text that can
-be used as dummy text. It is a Japanese counterpart of the
-lipsum package. Since there is no well-known nonsense text like
-Lipsum in the Japanese language, the package uses some real
-text in public domain.
+This package enables users to print some Japanese text that can be used
+as dummy text. It is a Japanese counterpart of the lipsum package. Since
+there is no well-known nonsense text like Lipsum in the Japanese
+language, the package uses some real text in public domain.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/bxjalipsum
-%doc %{_texmfdistdir}/doc/latex/bxjalipsum
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
